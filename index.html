@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d24">
+  <title>UXcel — UX Design Learning</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="desktop-label"><span class="logo-mini">◆<i>◆</i></span><span>uxcel</span><small>Learn UX design</small></div>
+    <section class="device" aria-label="UXcel app prototype">
+      <div class="status-bar"><span id="statusTime">9:41</span><span class="status-icons">▴ ▰ ▰</span></div>
+      <div class="screen splash-screen active" data-screen="splash">
+        <div class="splash-logo logo-mark">◆<i>◆</i></div>
+        <div class="home-bar"></div>
+      </div>
+
+      <div class="screen welcome-screen" data-screen="welcome">
+        <div class="welcome-logo logo-mark">◆<i>◆</i></div>
+        <h1>The best way to learn<br>UX design</h1>
+        <div class="welcome-actions">
+          <button class="social google" data-toast="Google sign-in is not connected in this demo."><span class="google-g">G</span>Continue with Google</button>
+          <button class="social light" data-toast="Apple sign-in is not connected in this demo."><span class="apple">●</span>Continue with Apple</button>
+          <button class="social light" data-toast="Facebook sign-in is not connected in this demo."><span class="facebook">f</span>Continue with Facebook</button>
+          <button class="social light" data-toast="SSO sign-in is not connected in this demo.">Continue with SSO</button>
+          <button class="email-entry" data-go="email">Sign up with Email</button>
+          <button class="login-entry" data-go="login">Login</button>
+        </div>
+        <div class="home-bar"></div>
+      </div>
+
+      <div class="screen form-screen" data-screen="email">
+        <div class="screen-header"><button class="back" data-back aria-label="Go back">‹</button><h2>Sign up with Email</h2><span></span></div>
+        <form id="emailForm" novalidate>
+          <label for="email">Email address</label>
+          <div class="input-wrap"><input id="email" type="email" placeholder="name@example.com" autocomplete="email"><span class="field-icon">✉</span></div>
+          <p class="error" id="emailError"></p>
+          <button class="continue-btn" type="submit">Continue</button>
+        </form>
+        <div class="home-bar"></div>
+      </div>
+
+      <div class="screen form-screen password-screen" data-screen="password">
+        <div class="screen-header"><button class="back" data-back aria-label="Go back">‹</button><h2>Sign up with Email</h2><span></span></div>
+        <form id="passwordForm" novalidate>
+          <label for="password">Password</label>
+          <div class="input-wrap"><input id="password" type="password" placeholder="Enter password" autocomplete="new-password"><button class="eye" id="togglePassword" type="button" aria-label="Show password">◉</button></div>
+          <div class="requirements">
+            <p data-rule="length"><span>●</span> At least 8 characters</p>
+            <p data-rule="upper"><span>●</span> At least 1 uppercase letter</p>
+            <p data-rule="lower"><span>●</span> At least 1 lowercase letter</p>
+            <p data-rule="number"><span>●</span> At least 1 number</p>
+          </div>
+          <p class="error" id="passwordError"></p>
+          <button class="continue-btn" id="createAccount" type="submit" disabled>Create account</button>
+          <p class="terms">By signing up, you agree to our <b>Terms of Service</b> and <b>Privacy Policy</b>.</p>
+        </form>
+        <div class="home-bar"></div>
+      </div>
+
+      <div class="screen form-screen" data-screen="passwordDone">
+        <div class="screen-header"><button class="back" data-back aria-label="Go back">‹</button><h2>Sign up with Email</h2><span></span></div>
+        <form id="passwordDoneForm">
+          <label for="passwordDone">Password</label>
+          <div class="input-wrap"><input id="passwordDone" type="password" value="Uxcel2026!" readonly><button class="eye" type="button" id="toggleDonePassword" aria-label="Show password">◉</button></div>
+          <div class="requirements completed">
+            <p><span>✓</span> At least 8 characters</p>
+            <p><span>✓</span> At least 1 uppercase letter</p>
+            <p><span>✓</span> At least 1 lowercase letter</p>
+            <p><span>✓</span> At least 1 number</p>
+          </div>
+          <button class="continue-btn" type="button" data-go="onboarding">Create account</button>
+          <p class="terms">By signing up, you agree to our <b>Terms of Service</b> and <b>Privacy Policy</b>.</p>
+        </form>
+        <div class="home-bar"></div>
+      </div>
+
+      <div class="screen onboarding-screen" data-screen="onboarding">
+        <div class="onboarding-top"><button class="skip" data-go="finalWelcome">Skip</button><div class="onboarding-progress"><span></span></div><button class="tiny-back" data-back aria-label="Go back">‹</button></div>
+        <div class="onboarding-content">
+          <div class="onboarding-symbol">✦</div>
+          <p class="eyebrow">YOUR UX JOURNEY STARTS HERE</p>
+          <h2>Welcome to Uxcel</h2>
+          <p class="onboarding-copy">Personalize your learning experience so we can help you grow your UX skills.</p>
+          <div class="onboarding-fields">
+            <label for="goal">What best describes you?</label><select id="goal"><option value="">Choose your experience</option><option>I'm new to UX design</option><option>I'm learning UX design</option><option>I'm a working designer</option></select>
+            <label for="interest">What do you want to learn?</label><select id="interest"><option value="">Choose a learning goal</option><option>UX fundamentals</option><option>User research</option><option>UI design</option><option>Design systems</option></select>
+            <label for="daily">Daily learning goal</label><select id="daily"><option>10 minutes a day</option><option>15 minutes a day</option><option>20 minutes a day</option></select>
+          </div>
+        </div>
+        <button class="continue-btn onboarding-continue" data-go="finalWelcome">Continue</button>
+        <div class="home-bar"></div>
+      </div>
+
+      <div class="screen final-screen" data-screen="finalWelcome">
+        <div class="final-top"><span>•••</span><span>▴ ▰ ▰</span></div>
+        <div class="final-content">
+          <div class="final-check">✓</div>
+          <div class="onboarding-progress final-progress"><span></span></div>
+          <h2>Welcome to Uxcel!</h2>
+          <p>You're all set. Your UX design journey starts now.</p>
+          <div class="final-summary"><span>✦</span><div><b>Your learning journey</b><small>Build your skills one lesson at a time.</small></div></div>
+        </div>
+        <button class="continue-btn" data-go="welcome">Get started</button>
+        <div class="home-bar"></div>
+      </div>
+    </section>
+    <div class="prototype-controls">
+      <span class="control-label">PROTOTYPE FLOW</span>
+      <div class="flow-dots" id="flowDots" aria-label="Choose screen"></div>
+      <button id="restart">↻ Restart</button>
+    </div>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
